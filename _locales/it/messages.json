@@ -1,0 +1,56 @@
+{
+  "extDescription": { "message": "Blocca i siti che potrebbero contenere malware." },
+
+  "blockedTitle": { "message": "Bloccato — Malaware" },
+  "blockedHeading": { "message": "Questo sito contiene malware." },
+  "blockedSubtitle": { "message": "Bloccato da Malaware." },
+  "blockedLabel": { "message": "Indirizzo bloccato" },
+
+  "popupDescription": {
+    "message": "Malaware blocca i siti che aggiungi a un elenco. Se provi a visitare un dominio bloccato, vieni reindirizzato a una pagina di avviso."
+  },
+  "popupStatusActive": { "message": "L'estensione è attiva." },
+  "popupStatusInactive": { "message": "L'estensione è disattivata." },
+  "popupBtnDisable": { "message": "Disattiva" },
+  "popupBtnEnable": { "message": "Attiva" },
+  "popupBtnImport": { "message": "Importa elenco" },
+
+  "importHeading": { "message": "Importa elenco" },
+  "importHint": {
+    "message": "Incolla un elenco di filtri (formato uBlock: ||example.com^) o un dominio per riga."
+  },
+  "importPlaceholder": {
+    "message": "! Commento\n||driver-reviver.com^\nevil.com"
+  },
+  "importBtnFile": { "message": "Scegli file" },
+  "importBtnStandard": { "message": "Importa standard" },
+  "importBtnSave": { "message": "Salva elenco" },
+  "importBtnBack": { "message": "Indietro" },
+
+  "msgFileAdded": {
+    "message": "File \"$NAME$\" aggiunto. Fai clic su Salva per confermare.",
+    "placeholders": { "name": { "content": "$1" } }
+  },
+  "msgFileFailed": { "message": "Impossibile leggere il file." },
+  "msgStandardAlreadyPresent": {
+    "message": "Elenco standard già presente ($TOTAL$ in totale). Fai clic su Salva.",
+    "placeholders": { "total": { "content": "$1" } }
+  },
+  "msgStandardAdded": {
+    "message": "Elenco standard aggiunto (+$ADDED$, $TOTAL$ in totale). Fai clic su Salva.",
+    "placeholders": { "added": { "content": "$1" }, "total": { "content": "$2" } }
+  },
+  "msgStandardFailed": { "message": "Impossibile importare l'elenco standard." },
+  "msgConfirmClear": { "message": "Il campo è vuoto — cancellare tutto l'elenco di blocco?" },
+  "msgNothingSaved": { "message": "Niente è stato salvato." },
+  "msgBlocklistEmpty": { "message": "L'elenco di blocco è vuoto." },
+  "msgBlocking": {
+    "message": "Blocco di $COUNT$ domini.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "msgSkipped": {
+    "message": "$COUNT$ righe ignorate (non valide).",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "msgSaveFailed": { "message": "Impossibile salvare l'elenco." }
+}

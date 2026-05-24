@@ -1,0 +1,56 @@
+{
+  "extDescription": { "message": "Estä verkkosivustot, jotka voivat sisältää haittaohjelmia." },
+
+  "blockedTitle": { "message": "Estetty — Malaware" },
+  "blockedHeading": { "message": "Tämä verkkosivusto sisältää haittaohjelmia." },
+  "blockedSubtitle": { "message": "Estetty Malawarella." },
+  "blockedLabel": { "message": "Estetty osoite" },
+
+  "popupDescription": {
+    "message": "Malaware estää listalle lisäämäsi verkkosivustot. Jos yrität vierailla estetyssä verkkotunnuksessa, sinut ohjataan varoitussivulle."
+  },
+  "popupStatusActive": { "message": "Laajennus on käytössä." },
+  "popupStatusInactive": { "message": "Laajennus on poistettu käytöstä." },
+  "popupBtnDisable": { "message": "Poista käytöstä" },
+  "popupBtnEnable": { "message": "Ota käyttöön" },
+  "popupBtnImport": { "message": "Tuo lista" },
+
+  "importHeading": { "message": "Tuo lista" },
+  "importHint": {
+    "message": "Liitä suodatinlista (esim. uBlock-muoto: ||example.com^) tai yksi verkkotunnus per rivi."
+  },
+  "importPlaceholder": {
+    "message": "! Kommentti\n||driver-reviver.com^\nevil.com"
+  },
+  "importBtnFile": { "message": "Valitse tiedosto" },
+  "importBtnStandard": { "message": "Tuo vakiolista" },
+  "importBtnSave": { "message": "Tallenna estolista" },
+  "importBtnBack": { "message": "Takaisin" },
+
+  "msgFileAdded": {
+    "message": "Tiedosto \"$NAME$\" lisätty. Vahvista painamalla Tallenna.",
+    "placeholders": { "name": { "content": "$1" } }
+  },
+  "msgFileFailed": { "message": "Tiedostoa ei voitu lukea." },
+  "msgStandardAlreadyPresent": {
+    "message": "Vakiolista on jo olemassa (yhteensä $TOTAL$). Paina Tallenna.",
+    "placeholders": { "total": { "content": "$1" } }
+  },
+  "msgStandardAdded": {
+    "message": "Vakiolista lisätty (+$ADDED$, yhteensä $TOTAL$). Paina Tallenna.",
+    "placeholders": { "added": { "content": "$1" }, "total": { "content": "$2" } }
+  },
+  "msgStandardFailed": { "message": "Vakiolistan tuonti epäonnistui." },
+  "msgConfirmClear": { "message": "Tekstikenttä on tyhjä — tyhjennetäänkö koko estolista?" },
+  "msgNothingSaved": { "message": "Mitään ei tallennettu." },
+  "msgBlocklistEmpty": { "message": "Estolista on tyhjä." },
+  "msgBlocking": {
+    "message": "Estetään $COUNT$ verkkotunnusta.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "msgSkipped": {
+    "message": "$COUNT$ riviä ohitettu (virheellisiä).",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "msgSaveFailed": { "message": "Estolistan tallennus epäonnistui." }
+}

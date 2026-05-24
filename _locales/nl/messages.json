@@ -1,0 +1,56 @@
+{
+  "extDescription": { "message": "Blokkeer websites die malware kunnen bevatten." },
+
+  "blockedTitle": { "message": "Geblokkeerd — Malaware" },
+  "blockedHeading": { "message": "Deze website bevat malware." },
+  "blockedSubtitle": { "message": "Geblokkeerd door Malaware." },
+  "blockedLabel": { "message": "Geblokkeerd adres" },
+
+  "popupDescription": {
+    "message": "Malaware blokkeert websites die je aan een lijst toevoegt. Bij een poging een geblokkeerd domein te bezoeken word je naar een waarschuwingspagina geleid."
+  },
+  "popupStatusActive": { "message": "Extensie is actief." },
+  "popupStatusInactive": { "message": "Extensie is uitgeschakeld." },
+  "popupBtnDisable": { "message": "Uitschakelen" },
+  "popupBtnEnable": { "message": "Inschakelen" },
+  "popupBtnImport": { "message": "Lijst importeren" },
+
+  "importHeading": { "message": "Lijst importeren" },
+  "importHint": {
+    "message": "Plak een filterlijst (bijv. uBlock-formaat: ||example.com^) of één domein per regel."
+  },
+  "importPlaceholder": {
+    "message": "! Opmerking\n||driver-reviver.com^\nevil.com"
+  },
+  "importBtnFile": { "message": "Bestand kiezen" },
+  "importBtnStandard": { "message": "Standaardlijst importeren" },
+  "importBtnSave": { "message": "Blokkeerlijst opslaan" },
+  "importBtnBack": { "message": "Terug" },
+
+  "msgFileAdded": {
+    "message": "Bestand \"$NAME$\" toegevoegd. Klik op Opslaan om te bevestigen.",
+    "placeholders": { "name": { "content": "$1" } }
+  },
+  "msgFileFailed": { "message": "Kon het bestand niet lezen." },
+  "msgStandardAlreadyPresent": {
+    "message": "Standaardlijst is al aanwezig ($TOTAL$ totaal). Klik op Opslaan.",
+    "placeholders": { "total": { "content": "$1" } }
+  },
+  "msgStandardAdded": {
+    "message": "Standaardlijst toegevoegd (+$ADDED$, $TOTAL$ totaal). Klik op Opslaan.",
+    "placeholders": { "added": { "content": "$1" }, "total": { "content": "$2" } }
+  },
+  "msgStandardFailed": { "message": "Kon de standaardlijst niet importeren." },
+  "msgConfirmClear": { "message": "Tekstvak is leeg — de hele blokkeerlijst wissen?" },
+  "msgNothingSaved": { "message": "Er is niets opgeslagen." },
+  "msgBlocklistEmpty": { "message": "Blokkeerlijst is leeg." },
+  "msgBlocking": {
+    "message": "Blokkeert $COUNT$ domeinen.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "msgSkipped": {
+    "message": "$COUNT$ regels overgeslagen (ongeldig).",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "msgSaveFailed": { "message": "Kon de blokkeerlijst niet opslaan." }
+}

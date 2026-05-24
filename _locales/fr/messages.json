@@ -1,0 +1,56 @@
+{
+  "extDescription": { "message": "Bloque les sites pouvant contenir des logiciels malveillants." },
+
+  "blockedTitle": { "message": "Bloqué — Malaware" },
+  "blockedHeading": { "message": "Ce site contient des logiciels malveillants." },
+  "blockedSubtitle": { "message": "Bloqué par Malaware." },
+  "blockedLabel": { "message": "Adresse bloquée" },
+
+  "popupDescription": {
+    "message": "Malaware bloque les sites que vous ajoutez à une liste. Si vous tentez de visiter un domaine bloqué, vous êtes redirigé vers une page d'avertissement."
+  },
+  "popupStatusActive": { "message": "L'extension est active." },
+  "popupStatusInactive": { "message": "L'extension est désactivée." },
+  "popupBtnDisable": { "message": "Désactiver" },
+  "popupBtnEnable": { "message": "Activer" },
+  "popupBtnImport": { "message": "Importer une liste" },
+
+  "importHeading": { "message": "Importer une liste" },
+  "importHint": {
+    "message": "Collez une liste de filtres (format uBlock : ||example.com^) ou un domaine par ligne."
+  },
+  "importPlaceholder": {
+    "message": "! Commentaire\n||driver-reviver.com^\nevil.com"
+  },
+  "importBtnFile": { "message": "Choisir un fichier" },
+  "importBtnStandard": { "message": "Importer la liste par défaut" },
+  "importBtnSave": { "message": "Enregistrer la liste" },
+  "importBtnBack": { "message": "Retour" },
+
+  "msgFileAdded": {
+    "message": "Fichier « $NAME$ » ajouté. Cliquez sur Enregistrer pour confirmer.",
+    "placeholders": { "name": { "content": "$1" } }
+  },
+  "msgFileFailed": { "message": "Impossible de lire le fichier." },
+  "msgStandardAlreadyPresent": {
+    "message": "Liste par défaut déjà présente ($TOTAL$ au total). Cliquez sur Enregistrer.",
+    "placeholders": { "total": { "content": "$1" } }
+  },
+  "msgStandardAdded": {
+    "message": "Liste par défaut ajoutée (+$ADDED$, $TOTAL$ au total). Cliquez sur Enregistrer.",
+    "placeholders": { "added": { "content": "$1" }, "total": { "content": "$2" } }
+  },
+  "msgStandardFailed": { "message": "Impossible d'importer la liste par défaut." },
+  "msgConfirmClear": { "message": "La zone de texte est vide — effacer toute la liste de blocage ?" },
+  "msgNothingSaved": { "message": "Rien n'a été enregistré." },
+  "msgBlocklistEmpty": { "message": "La liste est vide." },
+  "msgBlocking": {
+    "message": "Blocage de $COUNT$ domaines.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "msgSkipped": {
+    "message": "$COUNT$ lignes ignorées (invalides).",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "msgSaveFailed": { "message": "Impossible d'enregistrer la liste." }
+}

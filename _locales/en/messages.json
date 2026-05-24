@@ -1,0 +1,62 @@
+{
+  "extDescription": {
+    "message": "Block websites that may contain malware.",
+    "description": "Extension description shown in chrome://extensions and the Web Store."
+  },
+
+  "blockedTitle": { "message": "Blocked — Malaware" },
+  "blockedHeading": { "message": "This website contains malware." },
+  "blockedSubtitle": { "message": "Blocked by Malaware." },
+  "blockedLabel": { "message": "Blocked address" },
+
+  "popupDescription": {
+    "message": "Malaware blocks websites you add to a list. If you try to visit a blocked domain you are redirected to a warning page."
+  },
+  "popupStatusActive": { "message": "Extension is active." },
+  "popupStatusInactive": { "message": "Extension is disabled." },
+  "popupBtnDisable": { "message": "Disable" },
+  "popupBtnEnable": { "message": "Enable" },
+  "popupBtnImport": { "message": "Import list" },
+
+  "importHeading": { "message": "Import list" },
+  "importHint": {
+    "message": "Paste a filter list (e.g. uBlock format: ||example.com^) or one domain per line."
+  },
+  "importPlaceholder": {
+    "message": "! Comment\n||driver-reviver.com^\nevil.com"
+  },
+  "importBtnFile": { "message": "Choose file" },
+  "importBtnStandard": { "message": "Import standard" },
+  "importBtnSave": { "message": "Save block list" },
+  "importBtnBack": { "message": "Back" },
+
+  "msgFileAdded": {
+    "message": "File \"$NAME$\" added. Click Save to confirm.",
+    "placeholders": { "name": { "content": "$1", "example": "list.txt" } }
+  },
+  "msgFileFailed": { "message": "Could not read the file." },
+  "msgStandardAlreadyPresent": {
+    "message": "Standard list already present ($TOTAL$ total). Click Save to confirm.",
+    "placeholders": { "total": { "content": "$1", "example": "110" } }
+  },
+  "msgStandardAdded": {
+    "message": "Standard list added (+$ADDED$, $TOTAL$ total). Click Save to confirm.",
+    "placeholders": {
+      "added": { "content": "$1", "example": "110" },
+      "total": { "content": "$2", "example": "115" }
+    }
+  },
+  "msgStandardFailed": { "message": "Could not import the standard list." },
+  "msgConfirmClear": { "message": "Text area is empty — clear the entire block list?" },
+  "msgNothingSaved": { "message": "Nothing was saved." },
+  "msgBlocklistEmpty": { "message": "Block list is empty." },
+  "msgBlocking": {
+    "message": "Blocking $COUNT$ domains.",
+    "placeholders": { "count": { "content": "$1", "example": "42" } }
+  },
+  "msgSkipped": {
+    "message": "$COUNT$ lines were skipped (invalid).",
+    "placeholders": { "count": { "content": "$1", "example": "3" } }
+  },
+  "msgSaveFailed": { "message": "Could not save the block list." }
+}

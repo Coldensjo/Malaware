@@ -1,0 +1,56 @@
+{
+  "extDescription": { "message": "Bloker websteder, der kan indeholde skadelig software." },
+
+  "blockedTitle": { "message": "Blokeret — Malaware" },
+  "blockedHeading": { "message": "Dette websted indeholder skadelig software." },
+  "blockedSubtitle": { "message": "Blokeret af Malaware." },
+  "blockedLabel": { "message": "Blokeret adresse" },
+
+  "popupDescription": {
+    "message": "Malaware blokerer websteder, du tilføjer til en liste. Hvis du forsøger at besøge et blokeret domæne, omdirigeres du til en advarselsside."
+  },
+  "popupStatusActive": { "message": "Udvidelsen er aktiv." },
+  "popupStatusInactive": { "message": "Udvidelsen er deaktiveret." },
+  "popupBtnDisable": { "message": "Deaktiver" },
+  "popupBtnEnable": { "message": "Aktiver" },
+  "popupBtnImport": { "message": "Importer liste" },
+
+  "importHeading": { "message": "Importer liste" },
+  "importHint": {
+    "message": "Indsæt en filterliste (f.eks. uBlock-format: ||example.com^) eller et domæne pr. linje."
+  },
+  "importPlaceholder": {
+    "message": "! Kommentar\n||driver-reviver.com^\nevil.com"
+  },
+  "importBtnFile": { "message": "Vælg fil" },
+  "importBtnStandard": { "message": "Importer standard" },
+  "importBtnSave": { "message": "Gem blokliste" },
+  "importBtnBack": { "message": "Tilbage" },
+
+  "msgFileAdded": {
+    "message": "Filen \"$NAME$\" blev tilføjet. Klik på Gem for at bekræfte.",
+    "placeholders": { "name": { "content": "$1" } }
+  },
+  "msgFileFailed": { "message": "Kunne ikke læse filen." },
+  "msgStandardAlreadyPresent": {
+    "message": "Standardlisten findes allerede ($TOTAL$ i alt). Klik på Gem.",
+    "placeholders": { "total": { "content": "$1" } }
+  },
+  "msgStandardAdded": {
+    "message": "Standardlisten blev tilføjet (+$ADDED$, $TOTAL$ i alt). Klik på Gem.",
+    "placeholders": { "added": { "content": "$1" }, "total": { "content": "$2" } }
+  },
+  "msgStandardFailed": { "message": "Kunne ikke importere standardlisten." },
+  "msgConfirmClear": { "message": "Tekstfeltet er tomt — vil du rydde hele bloklisten?" },
+  "msgNothingSaved": { "message": "Intet blev gemt." },
+  "msgBlocklistEmpty": { "message": "Bloklisten er tom." },
+  "msgBlocking": {
+    "message": "Blokerer $COUNT$ domæner.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "msgSkipped": {
+    "message": "$COUNT$ linjer blev sprunget over (ugyldige).",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "msgSaveFailed": { "message": "Kunne ikke gemme bloklisten." }
+}

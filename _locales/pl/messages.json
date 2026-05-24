@@ -1,0 +1,56 @@
+{
+  "extDescription": { "message": "Blokuje strony, które mogą zawierać złośliwe oprogramowanie." },
+
+  "blockedTitle": { "message": "Zablokowano — Malaware" },
+  "blockedHeading": { "message": "Ta strona zawiera złośliwe oprogramowanie." },
+  "blockedSubtitle": { "message": "Zablokowane przez Malaware." },
+  "blockedLabel": { "message": "Zablokowany adres" },
+
+  "popupDescription": {
+    "message": "Malaware blokuje strony dodane do listy. Próba odwiedzenia zablokowanej domeny przekierowuje Cię na stronę z ostrzeżeniem."
+  },
+  "popupStatusActive": { "message": "Rozszerzenie jest aktywne." },
+  "popupStatusInactive": { "message": "Rozszerzenie jest wyłączone." },
+  "popupBtnDisable": { "message": "Wyłącz" },
+  "popupBtnEnable": { "message": "Włącz" },
+  "popupBtnImport": { "message": "Importuj listę" },
+
+  "importHeading": { "message": "Importuj listę" },
+  "importHint": {
+    "message": "Wklej listę filtrów (np. format uBlock: ||example.com^) lub jedną domenę na linię."
+  },
+  "importPlaceholder": {
+    "message": "! Komentarz\n||driver-reviver.com^\nevil.com"
+  },
+  "importBtnFile": { "message": "Wybierz plik" },
+  "importBtnStandard": { "message": "Importuj standardową" },
+  "importBtnSave": { "message": "Zapisz listę" },
+  "importBtnBack": { "message": "Wstecz" },
+
+  "msgFileAdded": {
+    "message": "Plik \"$NAME$\" dodany. Kliknij Zapisz, aby potwierdzić.",
+    "placeholders": { "name": { "content": "$1" } }
+  },
+  "msgFileFailed": { "message": "Nie udało się odczytać pliku." },
+  "msgStandardAlreadyPresent": {
+    "message": "Lista standardowa już istnieje (łącznie $TOTAL$). Kliknij Zapisz.",
+    "placeholders": { "total": { "content": "$1" } }
+  },
+  "msgStandardAdded": {
+    "message": "Lista standardowa dodana (+$ADDED$, łącznie $TOTAL$). Kliknij Zapisz.",
+    "placeholders": { "added": { "content": "$1" }, "total": { "content": "$2" } }
+  },
+  "msgStandardFailed": { "message": "Nie udało się zaimportować listy standardowej." },
+  "msgConfirmClear": { "message": "Pole tekstowe jest puste — wyczyścić całą listę blokad?" },
+  "msgNothingSaved": { "message": "Nic nie zapisano." },
+  "msgBlocklistEmpty": { "message": "Lista blokad jest pusta." },
+  "msgBlocking": {
+    "message": "Blokuje $COUNT$ domen.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "msgSkipped": {
+    "message": "Pominięto $COUNT$ linii (nieprawidłowe).",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "msgSaveFailed": { "message": "Nie udało się zapisać listy." }
+}

@@ -1,0 +1,56 @@
+{
+  "extDescription": { "message": "Blockera webbplatser som kan innehålla skadlig kod." },
+
+  "blockedTitle": { "message": "Blockerad — Malaware" },
+  "blockedHeading": { "message": "Den här webbplatsen innehåller skadlig programvara." },
+  "blockedSubtitle": { "message": "Blockerad av Malaware." },
+  "blockedLabel": { "message": "Blockerad adress" },
+
+  "popupDescription": {
+    "message": "Malaware blockerar webbplatser som du lägger till i en lista. Om du försöker besöka en blockerad domän omdirigeras du till en varningssida."
+  },
+  "popupStatusActive": { "message": "Tillägget är aktivt." },
+  "popupStatusInactive": { "message": "Tillägget är inaktiverat." },
+  "popupBtnDisable": { "message": "Inaktivera" },
+  "popupBtnEnable": { "message": "Aktivera" },
+  "popupBtnImport": { "message": "Importera lista" },
+
+  "importHeading": { "message": "Importera lista" },
+  "importHint": {
+    "message": "Klistra in en filterlista (t.ex. uBlock-format: ||example.com^) eller en domän per rad."
+  },
+  "importPlaceholder": {
+    "message": "! Kommentar\n||driver-reviver.com^\nevil.com"
+  },
+  "importBtnFile": { "message": "Välj fil" },
+  "importBtnStandard": { "message": "Importera standard" },
+  "importBtnSave": { "message": "Spara blocklista" },
+  "importBtnBack": { "message": "Tillbaka" },
+
+  "msgFileAdded": {
+    "message": "Filen \"$NAME$\" lades till. Klicka Spara för att bekräfta.",
+    "placeholders": { "name": { "content": "$1" } }
+  },
+  "msgFileFailed": { "message": "Kunde inte läsa filen." },
+  "msgStandardAlreadyPresent": {
+    "message": "Standardlistan finns redan ($TOTAL$ totalt). Klicka Spara för att bekräfta.",
+    "placeholders": { "total": { "content": "$1" } }
+  },
+  "msgStandardAdded": {
+    "message": "Standardlistan lades till (+$ADDED$, $TOTAL$ totalt). Klicka Spara för att bekräfta.",
+    "placeholders": { "added": { "content": "$1" }, "total": { "content": "$2" } }
+  },
+  "msgStandardFailed": { "message": "Kunde inte importera standardlistan." },
+  "msgConfirmClear": { "message": "Textrutan är tom — vill du rensa hela blocklistan?" },
+  "msgNothingSaved": { "message": "Inget sparades." },
+  "msgBlocklistEmpty": { "message": "Blocklistan är tom." },
+  "msgBlocking": {
+    "message": "Blockerar $COUNT$ domäner.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "msgSkipped": {
+    "message": "$COUNT$ rader hoppades över (ogiltiga).",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "msgSaveFailed": { "message": "Kunde inte spara blocklistan." }
+}

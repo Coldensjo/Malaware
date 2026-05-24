@@ -1,0 +1,56 @@
+{
+  "extDescription": { "message": "Bloqueia sites que podem conter malware." },
+
+  "blockedTitle": { "message": "Bloqueado — Malaware" },
+  "blockedHeading": { "message": "Este site contém malware." },
+  "blockedSubtitle": { "message": "Bloqueado pelo Malaware." },
+  "blockedLabel": { "message": "Endereço bloqueado" },
+
+  "popupDescription": {
+    "message": "O Malaware bloqueia sites que você adiciona a uma lista. Ao tentar visitar um domínio bloqueado, você é redirecionado para uma página de aviso."
+  },
+  "popupStatusActive": { "message": "A extensão está ativa." },
+  "popupStatusInactive": { "message": "A extensão está desativada." },
+  "popupBtnDisable": { "message": "Desativar" },
+  "popupBtnEnable": { "message": "Ativar" },
+  "popupBtnImport": { "message": "Importar lista" },
+
+  "importHeading": { "message": "Importar lista" },
+  "importHint": {
+    "message": "Cole uma lista de filtros (formato uBlock: ||example.com^) ou um domínio por linha."
+  },
+  "importPlaceholder": {
+    "message": "! Comentário\n||driver-reviver.com^\nevil.com"
+  },
+  "importBtnFile": { "message": "Escolher arquivo" },
+  "importBtnStandard": { "message": "Importar padrão" },
+  "importBtnSave": { "message": "Salvar lista" },
+  "importBtnBack": { "message": "Voltar" },
+
+  "msgFileAdded": {
+    "message": "Arquivo \"$NAME$\" adicionado. Clique em Salvar para confirmar.",
+    "placeholders": { "name": { "content": "$1" } }
+  },
+  "msgFileFailed": { "message": "Não foi possível ler o arquivo." },
+  "msgStandardAlreadyPresent": {
+    "message": "Lista padrão já presente ($TOTAL$ no total). Clique em Salvar.",
+    "placeholders": { "total": { "content": "$1" } }
+  },
+  "msgStandardAdded": {
+    "message": "Lista padrão adicionada (+$ADDED$, $TOTAL$ no total). Clique em Salvar.",
+    "placeholders": { "added": { "content": "$1" }, "total": { "content": "$2" } }
+  },
+  "msgStandardFailed": { "message": "Não foi possível importar a lista padrão." },
+  "msgConfirmClear": { "message": "Campo de texto vazio — limpar toda a lista de bloqueio?" },
+  "msgNothingSaved": { "message": "Nada foi salvo." },
+  "msgBlocklistEmpty": { "message": "A lista de bloqueio está vazia." },
+  "msgBlocking": {
+    "message": "Bloqueando $COUNT$ domínios.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "msgSkipped": {
+    "message": "$COUNT$ linhas ignoradas (inválidas).",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "msgSaveFailed": { "message": "Não foi possível salvar a lista." }
+}
