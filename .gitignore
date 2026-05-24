@@ -1,0 +1,19 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE/editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node/tooling noise
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python/tooling noise (if used for scripts)
+__pycache__/
+*.pyc

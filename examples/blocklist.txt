@@ -1,0 +1,7 @@
+# Example domain block list
+# One domain per line, comments start with # or !
+
+evil.com
+driver-reviver.com
+||fake-antivirus.example^
+https://suspicious.example/path

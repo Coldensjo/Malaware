@@ -17,6 +17,12 @@ applyI18n();
 
 const display = getBlockedDisplay();
 if (display) {
-  document.getElementById("blocked-url").textContent = display;
-  document.getElementById("blocked-row").hidden = false;
+  const blockedUrl = document.getElementById("blocked-url");
+  const blockedRow = document.getElementById("blocked-row");
+  if (blockedUrl && blockedRow) {
+    blockedUrl.textContent = display;
+    blockedRow.hidden = false;
+  } else {
+    console.error("Malaware: blocked page elements are missing");
+  }
 }

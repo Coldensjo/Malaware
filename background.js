@@ -1,6 +1,8 @@
 const BLOCKED_PAGE = chrome.runtime.getURL("blocked.html");
 const RULE_ID_START = 1;
 const MAX_DOMAINS_PER_RULE = 1000;
+const IPV4_RE = /^\d{1,3}(\.\d{1,3}){3}$/;
+const ASCII_HOSTNAME_RE = /^[a-z0-9.-]+$/;
 
 const BLOCKED_SUBRESOURCE_TYPES = [
   "sub_frame",
@@ -20,7 +22,53 @@ const BLOCKED_SUBRESOURCE_TYPES = [
 
 let blockedDomains = new Set();
 let extensionEnabled = true;
-let settingsReady;
+let settingsReady = Promise.resolve();
+let settingsLoadToken = 0;
+
+function normalizeStoredDomain(value) {
+  if (typeof value !== "string") {
+    return null;
+  }
+
+  const candidate = value.trim().toLowerCase().replace(/^\.+|\.+$/g, "");
+  if (!candidate || candidate.length > 253 || candidate.includes("..")) {
+    return null;
+  }
+
+  let hostname;
+  try {
+    hostname = new URL("http://" + candidate).hostname;
+  } catch {
+    return null;
+  }
+
+  if (!hostname || !hostname.includes(".") || IPV4_RE.test(hostname)) {
+    return null;
+  }
+  if (hostname.startsWith("[") || !ASCII_HOSTNAME_RE.test(hostname)) {
+    return null;
+  }
+
+  return hostname;
+}
+
+function sanitizeStoredDomains(domains) {
+  if (!Array.isArray(domains)) {
+    return [];
+  }
+
+  const seen = new Set();
+  const clean = [];
+  for (const domain of domains) {
+    const normalized = normalizeStoredDomain(domain);
+    if (!normalized || seen.has(normalized)) {
+      continue;
+    }
+    seen.add(normalized);
+    clean.push(normalized);
+  }
+  return clean;
+}
 
 async function syncDnrRules(domains, enabled) {
   try {
@@ -54,13 +102,26 @@ async function syncDnrRules(domains, enabled) {
 }
 
 async function loadSettings() {
-  const { domains = [], enabled = true } = await chrome.storage.local.get([
-    "domains",
-    "enabled",
-  ]);
-  blockedDomains = new Set(domains);
-  extensionEnabled = enabled;
-  await syncDnrRules(domains, enabled);
+  const loadToken = ++settingsLoadToken;
+
+  try {
+    const { domains = [], enabled = true } = await chrome.storage.local.get([
+      "domains",
+      "enabled",
+    ]);
+    const cleanDomains = sanitizeStoredDomains(domains);
+
+    // Ignore stale async loads when a newer settings read has started.
+    if (loadToken !== settingsLoadToken) {
+      return;
+    }
+
+    blockedDomains = new Set(cleanDomains);
+    extensionEnabled = Boolean(enabled);
+    await syncDnrRules(cleanDomains, extensionEnabled);
+  } catch (err) {
+    console.error("Malaware: failed to load settings", err);
+  }
 }
 
 function hostnameMatches(hostname, domain) {
@@ -126,5 +187,17 @@ chrome.webNavigation.onBeforeNavigate.addListener(async (details) => {
   }
 
   const target = `${BLOCKED_PAGE}?u=${encodeURIComponent(details.url)}`;
-  chrome.tabs.update(details.tabId, { url: target }).catch(() => {});
+  chrome.tabs.update(details.tabId, { url: target }).catch((err) => {
+    if (!err) {
+      return;
+    }
+    const message = String(err.message || err);
+    if (
+      message.includes("No tab with id") ||
+      message.includes("Tabs cannot be edited right now")
+    ) {
+      return;
+    }
+    console.warn("Malaware: failed to redirect blocked tab", err);
+  });
 });

@@ -65,18 +65,26 @@ function parseDomains(text) {
   return parseDomainsDetailed(text).domains;
 }
 
-const mainView = document.getElementById("main-view");
-const importView = document.getElementById("import-view");
-const toggleBtn = document.getElementById("toggle");
-const importBtn = document.getElementById("import");
-const backBtn = document.getElementById("back");
-const textarea = document.getElementById("domains");
-const saveBtn = document.getElementById("save");
-const loadFileBtn = document.getElementById("load-file");
-const importStandardBtn = document.getElementById("import-standard");
-const fileInput = document.getElementById("file");
-const status = document.getElementById("status");
-const enabledStatus = document.getElementById("enabled-status");
+function requiredElement(id) {
+  const element = document.getElementById(id);
+  if (!element) {
+    throw new Error(`Missing required element: #${id}`);
+  }
+  return element;
+}
+
+const mainView = requiredElement("main-view");
+const importView = requiredElement("import-view");
+const toggleBtn = requiredElement("toggle");
+const importBtn = requiredElement("import");
+const backBtn = requiredElement("back");
+const textarea = requiredElement("domains");
+const saveBtn = requiredElement("save");
+const loadFileBtn = requiredElement("load-file");
+const importStandardBtn = requiredElement("import-standard");
+const fileInput = requiredElement("file");
+const status = requiredElement("status");
+const enabledStatus = requiredElement("enabled-status");
 
 applyI18n();
 
@@ -112,7 +120,7 @@ backBtn.addEventListener("click", showMain);
 loadFileBtn.addEventListener("click", () => fileInput.click());
 
 fileInput.addEventListener("change", async () => {
-  const file = fileInput.files[0];
+  const file = fileInput.files?.[0];
   if (!file) return;
 
   try {
@@ -154,22 +162,37 @@ importStandardBtn.addEventListener("click", async () => {
 });
 
 toggleBtn.addEventListener("click", async () => {
-  const { enabled = true } = await chrome.storage.local.get("enabled");
-  await chrome.storage.local.set({ enabled: !enabled });
-  updateToggleUI(!enabled);
+  toggleBtn.disabled = true;
+  try {
+    const { enabled = true } = await chrome.storage.local.get("enabled");
+    const nextEnabled = !enabled;
+    await chrome.storage.local.set({ enabled: nextEnabled });
+    updateToggleUI(nextEnabled);
+  } catch (err) {
+    console.error("Malaware: failed to toggle enabled state", err);
+    showStatus(t("msgSaveFailed"), true);
+  } finally {
+    toggleBtn.disabled = false;
+  }
 });
 
 saveBtn.addEventListener("click", async () => {
   const { domains, invalid } = parseDomainsDetailed(textarea.value);
 
   if (domains.length === 0) {
-    const { domains: stored = [] } = await chrome.storage.local.get("domains");
-    if (stored.length > 0) {
-      const ok = confirm(t("msgConfirmClear"));
-      if (!ok) {
-        showStatus(t("msgNothingSaved"), true);
-        return;
+    try {
+      const { domains: stored = [] } = await chrome.storage.local.get("domains");
+      if (stored.length > 0) {
+        const ok = confirm(t("msgConfirmClear"));
+        if (!ok) {
+          showStatus(t("msgNothingSaved"), true);
+          return;
+        }
       }
+    } catch (err) {
+      console.error("Malaware: failed to read existing domains", err);
+      showStatus(t("msgSaveFailed"), true);
+      return;
     }
   }
 
@@ -186,12 +209,26 @@ saveBtn.addEventListener("click", async () => {
       parts.push(t("msgSkipped", [String(invalid)]));
     }
     showStatus(parts.join(" "));
-  } catch {
+  } catch (err) {
+    console.error("Malaware: failed to save domains", err);
     showStatus(t("msgSaveFailed"), true);
   }
 });
 
-chrome.storage.local.get(["enabled", "domains"], ({ enabled = true, domains = [] }) => {
-  updateToggleUI(enabled);
-  textarea.value = domains.join("\n");
-});
+async function initializePopupState() {
+  try {
+    const { enabled = true, domains = [] } = await chrome.storage.local.get([
+      "enabled",
+      "domains",
+    ]);
+    updateToggleUI(enabled);
+    textarea.value = domains.join("\n");
+  } catch (err) {
+    console.error("Malaware: failed to initialize popup state", err);
+    updateToggleUI(true);
+    textarea.value = "";
+    showStatus(t("msgSaveFailed"), true);
+  }
+}
+
+initializePopupState();

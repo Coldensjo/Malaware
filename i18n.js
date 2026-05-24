@@ -3,6 +3,10 @@ function t(key, substitutions) {
 }
 
 function applyI18n(root = document) {
+  if (!root || typeof root.querySelectorAll !== "function") {
+    return;
+  }
+
   for (const el of root.querySelectorAll("[data-i18n]")) {
     const key = el.getAttribute("data-i18n");
     const message = t(key);
@@ -10,6 +14,9 @@ function applyI18n(root = document) {
   }
   for (const el of root.querySelectorAll("[data-i18n-attr]")) {
     const spec = el.getAttribute("data-i18n-attr");
+    if (!spec) {
+      continue;
+    }
     for (const pair of spec.split(",")) {
       const [attr, key] = pair.split(":").map((s) => s.trim());
       if (!attr || !key) continue;
