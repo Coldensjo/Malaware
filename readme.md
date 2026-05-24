@@ -151,4 +151,4 @@ for (const c of ['||evil.com^','# comment','EVIL.COM','localhost','127.0.0.1','*
 
 ## License
 
-MIT.
+[MIT](LICENSE)
