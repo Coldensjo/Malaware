@@ -2,6 +2,10 @@
 
 Malaware is a lightweight Manifest V3 browser extension that blocks known-malicious or unwanted domains and redirects top-level visits to a warning page.
 
+## Who is this for?
+
+It's for the grandma who isn't comfortable using a computer—and for anyone helping her avoid “driver download” scams and malware.
+
 ## Features
 
 - Domain block list with one entry per line
