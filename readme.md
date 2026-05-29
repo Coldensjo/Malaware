@@ -4,7 +4,11 @@ Malaware is a lightweight Manifest V3 browser extension that blocks known-malici
 
 ## Who is this for?
 
-It's for the grandma who isn't comfortable using a computer—and for anyone helping her avoid “driver download” scams and malware.
+It's for your grandma who isn't comfortable using a computer—and for anyone helping her avoid “driver download” scams and malware.
+
+## Google Extensions
+
+Malaware exists on the Chrome Web Store]([LICENSE](https://chromewebstore.google.com/detail/Malaware/mhploefhkffionelolhjdogjofbcbjeh)).
 
 ## Features
 
