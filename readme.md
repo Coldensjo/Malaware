@@ -8,7 +8,7 @@ It's for your grandma who isn't comfortable using a computer—and for anyone he
 
 ## Google Extensions
 
-Malaware exists on the Chrome Web Store]([LICENSE](https://chromewebstore.google.com/detail/Malaware/mhploefhkffionelolhjdogjofbcbjeh)).
+Malaware exists on the [Chrome Web Store](https://chromewebstore.google.com/detail/Malaware/mhploefhkffionelolhjdogjofbcbjeh).
 
 ## Features
 
